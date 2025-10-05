@@ -1,0 +1,1 @@
+default_dynamic_string = "dynamic string"
