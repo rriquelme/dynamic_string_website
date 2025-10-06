@@ -42,7 +42,7 @@ def handler(event, context):
         message = f"(error reading parameter {PARAM_NAME}: {e.response.get('Error', {}).get('Message', 'unknown error')})"
 
     html_body = f"<h1>The saved string is {message}</h1>"
-    html_body += f"<p>{new_dynamic_string=}</p>"
+    # html_body += f"<p>{new_dynamic_string=}</p>"
 
     # Also be sure to not store cache in browser
     return {
