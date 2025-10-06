@@ -49,9 +49,8 @@ Other Solutions:
 
 - Using ECS/EKS to store a container to do the same as the previous bullet but containerized.
 
-
 ## How to improve the solution
-- Add Cloudfront in front the API Gateway and then add WAF, so it can be protected from DDOS, to avoid extra costs.
+- Add Cloudfront in front the API Gateway and then add WAF, so it can be protected from DDOS.
 
 - If the solution needs more speed, change the Parameter Store for a database, i.e. DynamoDB.
 
@@ -62,6 +61,8 @@ Other Solutions:
 - For the repository, enable github actions to deploy the solution after a PR approve.
 
 - For the terraform state file, store it into S3 to avoid loosing it.
+
+- For the terraform files, add a suffix for the parameters created to avoid conflict.
 
 ---
 @Author: rriquelme
