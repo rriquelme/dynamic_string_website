@@ -1,7 +1,10 @@
 # Solution
-The solution implemented to approach the challenge is to use a API Gateway and a Lambda function to display the html website, and for storing the dynamic string, the Parameter Store is used. The same Lambda function is also used to update the Parameter Store.
+The solution implemented to approach the challenge is to use a API Gateway, a Lambda Function and the Parameter Store as shown in the following diagram.
 
 ![Implemented Solution Diagram](ImplementedSolution.png)
+
+The same Lambda function verify if the API gateway has a parameter or not and this will trigger the change of the dynamic string.
+The result is also given by the Lambda Function and it will always read what the parameter store has.
 
 ## How to view and update the html page:
 
@@ -21,7 +24,13 @@ https://<Chars>.execute-api.us-east-1.amazonaws.com/prod?newstring=New String
 This will update the website and all users will see "New String" on the website.
 
 ## Why this solution was chosen
-This solution was chosen by simplicity, only a few serverless resources deployed, and for user usability, the same url is used to update the dynamic string.
+There were a few constrains that led the project to this solution:
+- The simplicity of the HTML, did not required a full Instance or a very small one.
+- The string to be stored is assumed to be small since it will fit on a h1 of a HTML.
+- For user usability it was decided that the user will have access to modify the string easily using a query.
+- For user usability it was decided that the base url should be the same to view the string and to modify it.
+
+This led to use serverless solutions that can be easily tested with a small deploy time.
 
 ## Other solutions
 Direct solutions to this challenge can be obtained used a similar topology:
