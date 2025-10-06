@@ -1,6 +1,8 @@
 # Dynamic String Website
 This repository is the solution to the dynamic string html challenge requested.
 
+The solution can be found in [link](/docs/Solution.md) also available in PDF in the same folder
+
 ## Folder Structure
 - **terraform/**: all terraform files needed to implement the solution
 - **terraform/lambda/app.py**: Lambda Python file to be deployed, runs on Python 3.13
