@@ -28,9 +28,7 @@ def handler(event, context):
             new_dynamic_string = " "
         try:
             _ssm.put_parameter(Name=PARAM_NAME, Value=new_dynamic_string, Type="String", Overwrite=True)
-            new_dynamic_string +=" (saved)"
         except ClientError as e:
-            new_dynamic_string = f"(error saving parameter {PARAM_NAME}: {e.response.get('Error', {}).get('Message', 'unknown error')})"
             pass # Not handled
     
     # Get current value from parameter store
@@ -42,7 +40,6 @@ def handler(event, context):
         message = f"(error reading parameter {PARAM_NAME}: {e.response.get('Error', {}).get('Message', 'unknown error')})"
 
     html_body = f"<h1>The saved string is {message}</h1>"
-    # html_body += f"<p>{new_dynamic_string=}</p>"
 
     # Also be sure to not store cache in browser
     return {
